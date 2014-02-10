@@ -89,6 +89,7 @@ public class BigHoeRenderer implements IItemRenderer
 
 			/*
 			 * 追加したアイテムの描画のみ変更する.
+			 * 今回はTessellatorを直接扱ってるが, Modelなどを描画させることも可能.
 			 */
 			if (item.getItem() == SampleItemRendererCore.itemBigHoe)
 			{
