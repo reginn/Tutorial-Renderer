@@ -9,3 +9,6 @@ Tutorial-Renderer
 サンプル内容
 ==================
 
+com.sample.renderer.item
+
+* IItemRendererのサンプル
