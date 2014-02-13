@@ -16,7 +16,7 @@ public class BlockColumn extends Block
 	@Override
 	public int getRenderType()
 	{
-		return SampleBlockRendererCore.renderID;
+		return SampleBlockRendererCore.blockColumnRenderID;
 	}
 
 	/*

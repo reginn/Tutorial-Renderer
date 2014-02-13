@@ -14,7 +14,11 @@ import org.lwjgl.opengl.GL11;
 public class BlockColumnRenderer implements ISimpleBlockRenderingHandler
 {
 	/*
-	 * インベントリ内と手に持っているときのブロックの描画
+	 * ブロックの形状を変えて単純な立方体にするハンドラ.
+	 */
+
+	/*
+	 * インベントリ内と手に持っているときのブロックの描画.
 	 * RenderBlocks.renderBlockAsItem()の8471以降を参照のこと.
 	 */
 	@Override
@@ -140,7 +144,7 @@ public class BlockColumnRenderer implements ISimpleBlockRenderingHandler
 			 */
 			block.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 			renderer.setRenderBoundsFromBlock(block);
-			return false;
+			return true;
 		}
 		return false;
 	}
@@ -166,6 +170,6 @@ public class BlockColumnRenderer implements ISimpleBlockRenderingHandler
 	@Override
 	public int getRenderId()
 	{
-		return SampleBlockRendererCore.renderID;
+		return SampleBlockRendererCore.blockColumnRenderID;
 	}
 }
