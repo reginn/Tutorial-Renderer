@@ -20,6 +20,7 @@ public class SampleBlockRendererCore
 
 	public static Block blockColumn;
 	public static Block blockCross;
+	public static Block blockTriangle;
 
 	/*
 	 * Blockの新しいRenderTypeIDを取得する.
@@ -30,6 +31,9 @@ public class SampleBlockRendererCore
 
 	@SideOnly(Side.CLIENT)
 	public static int blockCrossRenderID = RenderingRegistry.getNextAvailableRenderId();
+
+	@SideOnly(Side.CLIENT)
+	public static int blockTriangleRenderID = RenderingRegistry.getNextAvailableRenderId();
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -44,8 +48,14 @@ public class SampleBlockRendererCore
 				.setBlockTextureName("stone")
 				.setCreativeTab(CreativeTabs.tabBlock);
 
+		blockTriangle = (new BlockTriangle(Material.rock))
+				.setBlockName("blockTriangle")
+				.setBlockTextureName("stone")
+				.setCreativeTab(CreativeTabs.tabBlock);
+
 		GameRegistry.registerBlock(blockColumn, "blockColumn");
 		GameRegistry.registerBlock(blockCross, "blockCross");
+		GameRegistry.registerBlock(blockTriangle, "blockTriangle");
 	}
 
 	@Mod.EventHandler
@@ -58,6 +68,7 @@ public class SampleBlockRendererCore
 		{
 			RenderingRegistry.registerBlockHandler(new BlockColumnRenderer());
 			RenderingRegistry.registerBlockHandler(new BlockCrossRenderer());
+			RenderingRegistry.registerBlockHandler(new BlockTriangleRenderer());
 		}
 	}
 }
