@@ -50,7 +50,7 @@ public class SampleBlockRendererCore
 
 		blockTriangle = (new BlockTriangle(Material.rock))
 				.setBlockName("blockTriangle")
-				.setBlockTextureName("stone")
+				.setBlockTextureName("gold_block")
 				.setCreativeTab(CreativeTabs.tabBlock);
 
 		GameRegistry.registerBlock(blockColumn, "blockColumn");
