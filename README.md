@@ -11,4 +11,12 @@ Tutorial-Renderer
 
 com.sample.renderer.item
 
-* IItemRendererのサンプル
+* IItemRendererのサンプル2種
+
+com.sample.renderer.block
+
+* ISimpleBlockRenderingHandlerのサンプル3種
+
+com.sample.renderer.tileentity
+
+* TileEntitySpecialRendererのサンプル
