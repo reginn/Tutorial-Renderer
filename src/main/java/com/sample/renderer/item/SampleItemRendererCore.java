@@ -18,6 +18,7 @@ public class SampleItemRendererCore
 	public static final String VERSION = "0.0.0";
 
 	public static Item itemBigHoe;
+	public static Item itemModel;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -31,7 +32,15 @@ public class SampleItemRendererCore
 				.setTextureName("iron_hoe")
 				.setCreativeTab(CreativeTabs.tabTools);
 
+		/*
+		 * インベントリ内での描画を別途に行うので, アイコンは設定しない.
+		 */
+		itemModel = (new Item())
+				.setUnlocalizedName("itemModel")
+				.setCreativeTab(CreativeTabs.tabMaterials);
+
 		GameRegistry.registerItem(itemBigHoe, "itemBigHoe");
+		GameRegistry.registerItem(itemModel, "itemModel");
 	}
 
 	@Mod.EventHandler
@@ -44,6 +53,7 @@ public class SampleItemRendererCore
 		if (FMLCommonHandler.instance().getSide() == Side.CLIENT)
 		{
 			MinecraftForgeClient.registerItemRenderer(itemBigHoe, new BigHoeRenderer());
+			MinecraftForgeClient.registerItemRenderer(itemModel, new ItemModelRenderer());
 		}
 	}
 }
